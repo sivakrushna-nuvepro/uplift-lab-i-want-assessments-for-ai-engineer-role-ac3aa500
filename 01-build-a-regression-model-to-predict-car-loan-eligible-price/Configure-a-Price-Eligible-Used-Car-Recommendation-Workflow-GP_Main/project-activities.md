@@ -1,0 +1,13 @@
+Simulation 1
+1. In `practice_project/app.py`, implement `train_workflow(history, listings)` using exactly the ordered features `income`, `credit_score`, `employment_type`, `loan_tenure_months`, and `down_payment`, with `eligible_amount` as the target. Exclude the three leakage fields and validate completion with `python -m pytest -q`.
+2. Complete categorical and numeric preprocessing in `practice_project/app.py` so missing values and unseen employment categories can be scored. Fit on the first 18 borrower rows, evaluate on the final 6, and expose non-negative 85%–115% bounds through `predict_range`; observe finite, ordered bounds for known, missing, and unfamiliar employment types.
+3. Generate `validation_report` with model and median-baseline MAE, range coverage, and count/MAE/coverage diagnostics for income band, credit-score band, and employment type. Confirm the six holdout records are represented in every diagnostic dimension.
+4. Implement `recommend` in `practice_project/app.py` so price bounds are applied before TF-IDF similarity. Rank using all three listing text fields, resolve equal scores by ascending `listing_id`, and return exact source excerpts and grounded reasons; validate that only in-range listings appear.
+5. Complete `configure_workflow`, `RecommendationRequest`, and the `POST /recommend` endpoint in `practice_project/app.py`. Confirm the response includes bounds, eligible count, ranked recommendations, a grounded summary, and the exact educational-use disclaimer.
+6. For the paired practical assessment, independently finish the learner implementation and run `python -m pytest -q`. Passing requires the five-feature leakage-safe regression, baseline-beating validation evidence, and the critical bounded-and-grounded retrieval checks.
+
+Assessment 1
+1. Implement the regression workflow in practice_project/app.py using the five required profile features, the eligible_price target, leakage-safe preprocessing, deterministic holdout validation, and ordered non-negative price bounds; validate with python -m pytest -q.
+2. Complete the retrieval workflow in practice_project/app.py so listings are price-filtered before TF-IDF similarity ranking, ties are resolved by listing_id, and each recommendation includes a verbatim evidence excerpt; confirm the retrieval tests pass.
+3. Implement RecommendationRequest, the FastAPI app, and POST /recommendations in practice_project/app.py; verify invalid profiles are rejected and valid responses contain grounded recommendations and the required educational-use disclaimer.
+4. Run python -m pytest -q and inspect validation/report.json, produced by validation/conftest.py, for per-test outcomes, aggregate counts, process exit status, and rubric criterion references.

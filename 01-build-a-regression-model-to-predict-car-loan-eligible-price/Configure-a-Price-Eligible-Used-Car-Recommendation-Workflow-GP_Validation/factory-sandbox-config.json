@@ -1,0 +1,33 @@
+{
+  "environment": "browser-workspace",
+  "tools": [
+    {
+      "name": "Python workspace",
+      "purpose": "Implement and run the FastAPI, pandas, NumPy, and scikit-learn workflow."
+    },
+    {
+      "name": "pytest terminal",
+      "purpose": "Execute the frozen validation suite with `python -m pytest -q`."
+    },
+    {
+      "name": "Python",
+      "purpose": "Run the FastAPI, pandas, NumPy, and scikit-learn workflow."
+    },
+    {
+      "name": "pytest",
+      "purpose": "Execute the frozen validation suite and produce the local machine-readable report."
+    }
+  ],
+  "preloadFiles": [
+    "guided-instructions/README.md",
+    "practice_project/README.md",
+    "practice_project/app.py",
+    "reference_project/app.py",
+    "validation/test_workflow.py",
+    "validation/fixtures/borrower_history.csv",
+    "validation/fixtures/car_listings.csv",
+    "validation/rubric.json",
+    "requirements.txt",
+    "pytest.ini"
+  ]
+}

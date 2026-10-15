@@ -1,0 +1,38 @@
+{
+  "totalPoints": 100,
+  "criteria": [
+    {
+      "criterionId": "CRIT-REGRESSION",
+      "points": 30,
+      "requirements": ["REQ-001", "REQ-003"],
+      "testSelector": "TestRegressionWorkflow",
+      "nativeTestIds": [
+        "test_regression_uses_only_predecision_features",
+        "test_prediction_bounds_and_unknown_employment"
+      ],
+      "implementationPaths": ["reference_project/app.py"]
+    },
+    {
+      "criterionId": "CRIT-VALIDATION",
+      "points": 25,
+      "requirements": ["REQ-001", "REQ-003"],
+      "testSelector": "TestModelValidation",
+      "nativeTestIds": [
+        "test_validation_beats_baseline_and_reports_segments"
+      ],
+      "implementationPaths": ["reference_project/app.py"]
+    },
+    {
+      "criterionId": "CRIT-BOUNDED-GROUNDED-RETRIEVAL-CRITICAL",
+      "points": 45,
+      "requirements": ["REQ-002"],
+      "testSelector": "TestRetrievalAndApi",
+      "nativeTestIds": [
+        "test_retrieval_filters_before_ranking_and_is_grounded",
+        "test_retrieval_ties_are_deterministic",
+        "test_fastapi_contract_returns_educational_summary"
+      ],
+      "implementationPaths": ["reference_project/app.py"]
+    }
+  ]
+}

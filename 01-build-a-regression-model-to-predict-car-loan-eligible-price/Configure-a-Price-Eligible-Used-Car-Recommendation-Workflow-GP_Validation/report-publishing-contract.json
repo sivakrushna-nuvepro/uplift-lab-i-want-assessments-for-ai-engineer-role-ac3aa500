@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "factory-report-publication.v1",
+  "mode": "local",
+  "localReportPath": "reports/report.json",
+  "s3": {
+    "baseUri": null,
+    "region": null,
+    "endpoint": null,
+    "serverSideEncryption": null,
+    "kmsKeyIdEnvironmentVariable": "FACTORY_REPORT_S3_KMS_KEY_ID",
+    "credentialPolicy": "aws-default-provider-chain",
+    "objectKeyTemplate": "{tenantId}/{projectId}/{attemptId}/{reportFilename}"
+  },
+  "runtimeEnvironment": {
+    "tenantId": "FACTORY_REPORT_TENANT_ID",
+    "projectId": "FACTORY_REPORT_PROJECT_ID",
+    "attemptId": "FACTORY_REPORT_ATTEMPT_ID"
+  }
+}
